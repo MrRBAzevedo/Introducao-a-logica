@@ -4,5 +4,5 @@ def main():
     print('alo turma de infoweb 2026')
 
 if __name__ == '__main__':
-    subprocess.run(['clear'], shell = True)
+    subprocess.run(['cls'], shell = True)
     main()
