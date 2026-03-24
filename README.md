@@ -4,8 +4,10 @@
 [Clique para acessar o GitHub da sala](https://github.com/infoweb-logica)
 
 <details>
-<summary>Clique para abrir</summary>
+<summary>Calendário de provas</summary>
 
-Eu adoro brincar com markdown
+|  Dia  | Prova |
+|-------|-------|
+| 26/03 |  1.1  |
 
 </details>
