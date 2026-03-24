@@ -3,3 +3,9 @@
 
 [Clique para acessar o GitHub da sala](https://github.com/infoweb-logica)
 
+<details>
+<summary>Clique para abrir</summary>
+
+Eu adoro brincar com markdown
+
+</details>
