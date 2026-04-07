@@ -1,1 +1,1 @@
-print(max(input(), input()))
+print(max(int(input()), int(input())))
