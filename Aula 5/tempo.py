@@ -1,11 +1,11 @@
 tempo = 0
+tipo_anterior = '0'
 amigos = []
-entradas = []
 n = int(input())
 
 for i in range(n):
     tipo, amigo = input().split()
-    entradas.append(tipo)
+    amigo = int(amigo)
 
     if tipo == 'R':
         
@@ -14,16 +14,13 @@ for i in range(n):
             if a['nome'] == amigo:
                 found = True
                 a['R'] = tempo
+                a['respondida'] = False
 
         if not found:
-            a = {'nome' : amigo, 'R' : tempo, 'T' : 0}
+            a = {'nome' : amigo, 'R' : tempo, 'T' : 0, 'respondida' : False}
             amigos.append(a)
 
-        if i != 0:
-            if entradas[i - 1] != 'T':
-                tempo += 1
-        else:
-            tempo += 1
+        tempo += 1
 
     elif tipo == 'E':
         
@@ -31,18 +28,25 @@ for i in range(n):
             if a['nome'] == amigo:
                 dur = tempo - a['R']
                 a['T'] += dur
+                a['respondida'] = True
 
-        if entradas[i - 1] != 'T':
-                tempo += 1
+        tempo += 1
 
     elif tipo == 'T':
-        if i == 1:
+        if tipo_anterior in ['R', 'E']:
             tempo -= 1
+        
+        tempo += amigo
 
-        tempo += int(amigo)
+    tipo_anterior = tipo
+
+amigos.sort(key=lambda d: d['nome'])
 
 for a in amigos:
-    print(a)
+    if a['respondida'] == False:
+        a['T'] = -1
+
+    print(a['nome'], a['T'])
 
                 
             
