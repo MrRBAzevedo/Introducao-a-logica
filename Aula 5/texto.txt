@@ -1,1 +1,7 @@
-Aula de GitHub
+Depuração (debug)
+
+ - A depuração de um código consiste em encontrar e corrigir problemas que estão afetando o funcionamento do programa
+ - Existem três tipo de erros que um código pode apresentar:
+    - Erro de sintaxe: quando alguma estrutura línguistica está mal construída, impedindo o funcionamento do código
+    - Erro de semântica: quando a lógica do código está mal construída, provocando saídas não esperadas
+    - Erro de execução: quando o código está sintatica e semanticamente correto, mas não consegue executar uma instrução específica
