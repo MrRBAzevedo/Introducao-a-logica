@@ -1,19 +1,11 @@
-marcus = False
-juca = False
-roberto = False
-maria = False
+x = 'a'
 
-marcus = True
 
-if marcus == True:
-    juca = True
 
-if juca == True:
-    roberto = True
+while x != 'close':
+    x = input()
 
-if roberto == True:
-    maria = True
-
-print(juca)
-print(roberto)
-print(maria)
+    if x == 'd':
+        print('Andando para frente')
+    elif x == 'a':
+        print('Andando para trás')
