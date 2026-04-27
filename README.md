@@ -3,6 +3,8 @@
 
 [Clique para acessar o GitHub da sala](https://github.com/infoweb-logica)
 
+- [Notas de aula de Python](https://github.com/infoweb-logica/python)
+
 <details>
 <summary>Calendário de provas</summary>
 
