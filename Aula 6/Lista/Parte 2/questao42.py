@@ -1,7 +1,9 @@
+n = int(input())
 contador = 1
-limite = int(input())
 
-while contador <= limite:
-    print(contador * '*')
+while contador <= n:
+    if contador % 2 == 0 and contador % 7 == 0:
+        print(contador)
 
     contador += 1
+    
