@@ -8,18 +8,18 @@ while contador <= n:
 
     contador += 1
 
-contador = 1
+contador = 0
 maior = numeros[0]
 while contador < n:
-    if numeros[contador] > numeros[contador - 1]:
+    if numeros[contador] > maior:
         maior = numeros[contador]
 
     contador += 1
 
-contador = 1
+contador = 0
 menor = numeros[0]
 while contador < n:
-    if numeros[contador] < numeros[contador - 1]:
+    if numeros[contador] < menor:
         menor = numeros[contador]
 
     contador += 1
