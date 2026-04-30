@@ -1,4 +1,10 @@
-lista = [1, 2, 3, 4, 5]
-contador = 2
+base = 3
+exp = 13
+contador = 1
+prod = 1
 
-print(lista[contador - 1])
+while contador <= exp:
+    prod *= base
+    contador += 1
+
+print(prod)
