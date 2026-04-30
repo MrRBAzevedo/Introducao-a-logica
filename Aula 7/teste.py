@@ -1,10 +1,5 @@
-base = 3
-exp = 13
-contador = 1
-prod = 1
+frase = list(input())
+frase = reversed(frase)
 
-while contador <= exp:
-    prod *= base
-    contador += 1
-
-print(prod)
+for letter in frase:
+    print(letter, end = '')
