@@ -1,9 +1,17 @@
-x = int(input())
-y = int(input())
+tamanho = 8
 
-x_b = bin(x)[2:]
-y_b = bin(y)[2:]
+num = int(input())
+binario = ''
 
-print(x_b)
-print(y_b)
-print(x_b + y_b)
+while num != 0:
+    dig = num % 2
+    binario += str(dig)
+
+    num = num // 2
+
+while len(binario) < tamanho:
+    binario += '0'
+
+binario = binario[::-1]
+
+print(binario)
