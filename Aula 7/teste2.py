@@ -1,17 +1,18 @@
-def soma(num1, num2):
-    resultado = ''
-    contador = 0
-    
-    while contador < len(num1):
-        if num1[contador] != num2[contador]:
-            resultado += '1'
-        else:
-            resultado += '0'
+class Triangulo:
+    def __init__(self):
+        self.__b = 0
+        self.__h = 0
 
-        contador += 1
-    
-    return resultado
+    def set_base(self, base):
+        self.__b = base
 
-x = input()
-y = input()
-print(soma(x, y))
+    def set_hight(self, hight):
+        self.__h = hight
+
+    def calc_area(self):
+        return self.__b * self.__h / 2
+
+a = Triangulo()
+a.set_base(20)
+a.set_hight(10)
+print(a.calc_area())
