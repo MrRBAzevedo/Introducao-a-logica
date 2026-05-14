@@ -1,6 +1,5 @@
 cel = 0
 
-print(f'|   {'Celsius'.ljust(11)}|  {'Fahrenheit'.ljust(12)}|   {'Kelvin'.ljust(10)}| {'Classificação'.ljust(14)}|')
 while cel <= 100:
     fah = cel * (9/5) + 32
     kel = cel + 273.15
