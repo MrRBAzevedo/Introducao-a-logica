@@ -1,4 +1,4 @@
-palavra = input()
+palavra = list('Palavra')
+print(palavra)
 
-for dig in palavra:
-    print(dig)
+print(palavra[::-1])
