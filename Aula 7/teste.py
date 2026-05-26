@@ -1,11 +1,16 @@
-def maior(*args):
-    m = args[0]
+n = int(input('Número de valores a serem lidos: '))
+lista = []
 
-    for num in args:
-        if num > m:
-            m = num
+for i in range(n):
+    valor = int(input())
+    lista.append(valor)
 
-    return m
+soma = 0
 
-num = maior(10, 20, 30, 40, 50, 60, 70)
-print(num)
+for valor in lista:
+    soma += valor
+
+print(soma)
+
+for i in range(len(lista)):
+    valor = lista[i]

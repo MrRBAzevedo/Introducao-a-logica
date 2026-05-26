@@ -11,7 +11,5 @@ while True:
 
     profundidade += 1
 
-    if fracao in arvore:
-        print(arvore)
-        print(profundidade)
+    if fracao in arvore:      
         break
