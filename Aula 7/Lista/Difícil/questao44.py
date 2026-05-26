@@ -13,3 +13,20 @@ while True:
 
     if fracao in arvore:      
         break
+
+sequencia = ''
+
+
+for i in range(1, profundidade):
+    metade = len(arvore) / 2
+    index = arvore.index(fracao)
+
+    if index < metade:
+        arvore = arvore[0:int(metade + 1/2)]
+        sequencia += 'L'
+    elif index > metade:
+        arvore = arvore[int(metade - 1/2):len(arvore)]
+        sequencia += 'R'
+    
+print(sequencia)
+print(profundidade)
