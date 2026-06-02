@@ -1,60 +1,22 @@
-def palindromo(lista):
-    if lista == lista[::-1]:
-        return True
-    else:
-        return False
-
-def cortar(lista):
-    while True:
-        if lista[0] == lista[-1]:
-            lista.pop(0)
-            lista.pop(-1)
-        else:
-            break
-    
-    return lista
-
-def contracao(lista):
-    lista1 = lista[0:len(lista)]
-    lista2 = lista[0:len(lista)]
-
-    lista1[0] = lista1[0] + lista[1]
-    lista1.pop(1)
-    lista2[-1] = lista2[-1] + lista2[-2]
-    lista2.pop(-2)
-    
-    return lista1, lista2
-
 n = int(input())
-lista = []
-listas = []
-contracoes = 0
-
 lista = input().split()
 lista = [int(num) for num in lista]
+contracoes = 0
 
-listas.append(lista)
+esquerda = 0
+direita = len(lista) - 1
 
-while True:
-    found = False
-    novas_listas = []
+while esquerda < direita:
+    if lista[esquerda] == lista[direita]:
+        esquerda += 1
+        direita -= 1
+    elif lista[esquerda] < lista[direita]:
+        lista[esquerda + 1] += lista[esquerda]
+        contracoes += 1
+        esquerda += 1
+    else:
+        lista[direita - 1] += lista[direita]
+        contracoes += 1
+        direita -= 1
 
-    for lista in listas:
-        if palindromo(lista):
-            found = True
-
-    if found == True:
-        print(contracoes)
-        break
-
-    for lista in listas:
-        lista = cortar(lista)
-
-    for lista in listas:
-        nova_lista1, nova_lista2 = contracao(lista)
-        novas_listas.append(nova_lista1)
-        novas_listas.append(nova_lista2)
-
-    listas = novas_listas.copy()
-    novas_listas = []
-    contracoes += 1
+print(contracoes)
