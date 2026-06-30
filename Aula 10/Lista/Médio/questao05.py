@@ -1,12 +1,12 @@
 n = int(input())
 lista = list(map(int, input().split()))
-contador = 1
+lista_nova = [lista[0]]
 
-while contador < len(lista) - 1:
-    if lista[contador] > lista[contador - 1] and lista[contador] > lista[contador + 1]:
-        lista.pop(contador)
-        contador -= 1
-    else:
-        contador += 1
+for i in range(1, len(lista) - 1):
+    if lista[i] <= lista[i - 1] or lista[i] <= lista[i + 1]:
+        lista_nova.append(lista[i])
 
-print(lista)    
+lista_nova.append(lista[-1])
+
+for item in lista_nova:
+    print(item, end = ' ')
