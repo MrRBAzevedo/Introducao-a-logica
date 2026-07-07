@@ -1,3 +1,4 @@
-p = int(input()) // 2
-o = int(input()) // 4
-print(o if o < p else p)
+dicio = {'Aluno':'Renan', 'Idade':16, 'Matrícula':20261011110006}
+
+for chave, valor in dicio.items():
+    print(f'{chave}: {valor}')
