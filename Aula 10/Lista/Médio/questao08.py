@@ -1,34 +1,13 @@
-n, s = map(int, input().split())
+n, soma = map(int, input().split())
 lista = list(map(int, input().split()))
-dicio = {}
+elementos = {}
 
 for i, valor in enumerate(lista):
-    fator = s - valor
+    par = soma - valor
 
-    if fator in dicio:
-        print(dicio[fator], i)
+    if par in elementos:
+        print(elementos[par], i)
         break
 
-    dicio[valor] = i
-else:
-    print('-1 -1')
+    elementos[valor] = i
 
-
-
-
-
-
-
-
-# for i, valor in enumerate(lista):
-#     dicio[valor] = i
-
-# for valor, i in dicio.items():
-#     fator = s - valor
-
-#     if fator in dicio:
-#         if i < dicio[fator]:
-#             print(i, dicio[fator])
-#             break
-# else:
-#     print('-1 -1')
