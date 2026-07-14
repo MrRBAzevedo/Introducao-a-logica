@@ -1,2 +1,5 @@
-lista = [-2, -1, 0, 1, 2]
-print(lista[-1], lista[-2])
+def intput():
+    return int(input())
+
+x = intput()
+print(x)
