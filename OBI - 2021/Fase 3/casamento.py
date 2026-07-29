@@ -1,26 +1,31 @@
-a = int(input())
-b = int(input())
-repeticoes = len(list(str(max(a, b))))
-resultado_a = ''
-resultado_b = ''
+a = input()
+b = input()
+tamanho_a = len(a)
+tamanho_b = len(b)
+tamanho = max(tamanho_a, tamanho_b)
 
-for i in range(repeticoes):
-    digito_a = a % 10
-    a //= 10
-    digito_b = b % 10
-    b //= 10
+if tamanho_a > tamanho_b:
+    b = (tamanho_a - tamanho_b) * '0' + b
+elif tamanho_b > tamanho_a:
+    a = (tamanho_b - tamanho_a) * '0' + a
 
-    if digito_a > digito_b:
-        resultado_a = str(digito_a) + resultado_a
-    elif digito_b > digito_a:
-        resultado_b = str(digito_b) + resultado_b
+resul_a = []
+resul_b = []
+
+for i in range(tamanho -1, -1, -1):
+    if a[i] > b[i]:
+        resul_a.append(a[i])
+    elif b[i] > a[i]:
+        resul_b.append(b[i])
     else:
-        resultado_a = str(digito_a) + resultado_a
-        resultado_b = str(digito_b) + resultado_b
+        resul_a.append(a[i])
+        resul_b.append(b[i])
 
-resultado_a = int(resultado_a) if resultado_a else -1
-resultado_b = int(resultado_b) if resultado_b else -1
+resul_a.reverse()
+resul_b.reverse()
 
-print(f'{resultado_a} {resultado_b}' if resultado_a < resultado_b else f'{resultado_b} {resultado_a}')
+resul_a = int(''.join(resul_a)) if resul_a else -1
+resul_b = int(''.join(resul_b)) if resul_b else -1
 
+print(f'{resul_a} {resul_b}' if resul_b > resul_a else f'{resul_b} {resul_a}')
 

@@ -5,7 +5,10 @@ resultado = 0
 
 while a <= b:
     num = str(a)
-    soma = int(num[0]) + int(num[1])
+    soma = 0
+    
+    for i in range(len(num)):
+        soma += int(num[i])
 
     if soma == s:
         resultado += 1
