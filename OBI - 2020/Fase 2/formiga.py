@@ -1,5 +1,3 @@
-from collections import deque
-
 S, T, P = map(int, input().split())
 A = list(map(int, input().split()))
 Mapa = [[] for _ in range(S)]
@@ -9,20 +7,21 @@ for i in range(T):
 
     if A[n1 - 1] > A[n2 - 1]:
         Mapa[n1 - 1].append(n2 - 1)
-    else:
+    elif A[n2 - 1] > A[n1 - 1]:
         Mapa[n2 - 1].append(n1 - 1)
 
+cam = [-1] * S
+
 def busca(grafo, no_inicial):
-    visitados = set()
-    fila = deque([no_inicial])
-    visitados.add(no_inicial)
-    nivel = 0
+    if cam[no_inicial] != -1:
+        return cam[no_inicial]
+    
+    maior = 0
+    
+    for vizinho in grafo[no_inicial]:
+        maior = max(maior, 1 + busca(grafo, vizinho))
+    
+    cam[no_inicial] = maior
+    return maior 
 
-    while fila:
-        no_atual = fila.popleft()
-
-        for vizinho in Mapa[no_atual]:            
-            if vizinho not in visitados:
-                visitados.add(vizinho)
-                fila.append(vizinho)
-
+print(busca(Mapa, P-1))
