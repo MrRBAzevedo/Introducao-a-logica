@@ -4,9 +4,6 @@ pos1 = X.index(1)
 pos9 = X.index(9)
 meio = 7.5
 
-print(pos1)
-print(pos9)
-
 while True:
     if pos1 > meio and pos9 < meio or pos1 < meio and pos9 > meio:
         break
@@ -17,7 +14,7 @@ while True:
         meio -= 2 ** (2 - rodada)
         rodada += 1
 
-    print(meio)
-
-print(rodada)
-
+if rodada == 0: print('final')
+elif rodada == 1: print('semifinal')
+elif rodada == 2: print('quartas')
+else: print('oitavas')
