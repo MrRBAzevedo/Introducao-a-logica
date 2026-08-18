@@ -1,32 +1,25 @@
-def Dias(C, F):
-    dia = 0
+n, f = map(int, input().split())
+c = list(map(int, input().split()))
+
+def Contar(dias):
+    global c
     moedas = 0
 
-    while moedas < F:
-        mmc = True
-        dia += 1
-        
-        for capsula in C:
-            if dia % capsula == 0:
-                moedas += 1
-            else:
-                mmc = False
+    for capsula in c:
+        moedas += dias // capsula
 
-        if mmc:
-            break
+    return moedas
 
-    return dia, moedas
+maior = 10**8
+menor = 1
+meio = (maior + menor) // 2
 
-N, F = map(int, input().split())
-C = list(map(int, input().split()))
+while menor < maior:
+    meio = (maior + menor) // 2
+    
+    if Contar(meio) >= f:
+        maior = meio
+    else:
+        menor = meio + 1
 
-dia, moedas = Dias(C, F)
-
-if moedas >= F:
-    print(dia)
-else:
-    dias = F // moedas * dia
-
-    dias += Dias(C, F % moedas)[0]
-
-    print(dias)
+print(menor)
