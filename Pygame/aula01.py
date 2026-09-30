@@ -1,21 +1,15 @@
 import pygame
 # Importa a biblioteca do Pygame para o código
+from classes import Janela
 
 pygame.init()
 # Inicia os módulos do Pygame
 
-class Janela:
-    def __init__(self, largura, altura):
-        self.largura = largura
-        self.altura = altura
+janela_principal = Janela(1600, 900, 'Janela principal')
 
-    def Iniciar(self):
-        
-
-
-janela = pygame.display.set_mode((1600, 900))
+# janela = pygame.display.set_mode((1600, 900))
 # Abre a janela do jogo
-pygame.display.set_caption("Janela de Pygame")
+# pygame.display.set_caption("Janela de Pygame")
 # Modifica o título da janela
 
 corFundo = [0, 0, 0]
@@ -25,7 +19,7 @@ loop_rodando = True
 while loop_rodando:
     # É o loop principal do jogo, responsável por manter a janela aberta e processar os eventos causados pelo usuário
 
-    janela.fill(corFundo)
+    # janela.fill(corFundo)
     # Preenche o fundo da janela com uma cor sólida
     # Deve ser chamada a cada frame
 
