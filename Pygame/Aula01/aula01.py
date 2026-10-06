@@ -1,6 +1,6 @@
 import pygame
 # Importa a biblioteca do Pygame para o código
-from classes import Janela
+from Pygame.Aula01.classes import Janela
 
 pygame.init()
 # Inicia os módulos do Pygame
